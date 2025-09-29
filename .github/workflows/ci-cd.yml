@@ -22,10 +22,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t your-dockerhub-username/docker-ci-cd-demo:latest .
+        run: docker build -t samderick/docker-ci-cd-demo:latest .
 
       - name: Run tests
-        run: docker run --rm your-dockerhub-username/docker-ci-cd-demo:latest python -m unittest discover -s tests
+        run: docker run --rm samderick/docker-ci-cd-demo:latest python -m unittest discover -s tests
 
       - name: Push Docker image
-        run: docker push your-dockerhub-username/docker-ci-cd-demo:latest
+        run: docker push samderick/docker-ci-cd-demo:latest

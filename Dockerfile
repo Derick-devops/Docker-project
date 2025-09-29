@@ -9,7 +9,10 @@ COPY app/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy app code
-COPY app/ .
+COPY app/ /app
+
+# Copy tests folder
+COPY tests/ /app/tests
 
 # Expose port 5000
 EXPOSE 5000
